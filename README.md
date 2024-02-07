@@ -6,3 +6,7 @@
 
 ### Video Menu
 ![](/screenshots/g3.PNG)
+
+# Search Menu
+![](/screenshots/s1.PNG)
+
