@@ -10,3 +10,6 @@
 # Search Menu
 ![](/screenshots/s1.PNG)
 
+### Search results menu
+![](/screenshots/s2.PNG)
+
