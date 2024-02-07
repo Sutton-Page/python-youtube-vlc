@@ -1,5 +1,5 @@
 # Project Description
-This project allows users to search, browse, and watch YouTube videos form the commandline. 
+Commandline tool for searching, browsing, and watching YouTube vidoes.
 
 ## Project Setup
 To setup this project you need to create project Google Cloud project that uses the YoutubeAPI. Generate API keys and setup an Oauth registration screen. 
