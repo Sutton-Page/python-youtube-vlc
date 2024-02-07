@@ -1,0 +1,197 @@
+
+Main Script Flow
+
+--------------------------
+
+
+Check User Credentials 
+
+ -> Renew if credentials exists
+
+ -> If credentials ok --> continue
+
+ -> Ask user to allow account access
+
+
+
+
+(Local) read user data 
+
+(internet) Grab User subscriptions (Grab channel ids only) :: Call (A) 
+
+-> if new subscrption --> grab channel data -->  :: Call (B) 
+
+-> if no new subscription [continue]
+
+
+
+new subscription 
+
+-> save new channel data in json file
+
+
+** Video Menu ** 
+
+type [p] to play video --> calls cmd to run vlc with video url
+
+type [b] go back to previous menu 
+
+
+[prompt] 
+
+type  [c] for your channels
+
+type [s] for search 
+
+type [u] update cache data (Check for new user subscriptions) 
+
+type [exit] to end script 
+
+
+Event user typed [u]
+
+(Local) load user subscription ids
+
+(Internet) Grab user subscriptions ids
+
+-> if new id -> grab channel data add to user data json
+
+-> else  do nothing -> print the user did not add any subscriptions
+
+
+Event: user typed [s]
+
+search all or specific [1-x]
+
+	- all 
+
+	- channels
+
+	- videos
+
+
+-> Use api to search for terms user inputed 
+
+
+results displayed [1-x]
+
+type [m] for more results (If applicable) 
+
+Event: user chooses result
+
+*** Refer to video menu *** 
+
+
+
+
+[next c prompt]
+
+after initally called lists all channel titles with number [1-x] 
+
+[text output] type channel number to see more info
+
+[type back to go back to inital prompt]
+
+
+Event: channel id typed 
+
+[text] channel infomation 
+
+type [u] for channel uploads --> grab upload playlist from channel
+
+type [s] to search channel videos --> use search api with channel paramater
+
+type [p] to list playlists -> use playlist api to list channel playlists
+
+type [b] to go back 
+
+
+
+Event: chose channel playlist 
+
+list channel playlist [1-x]
+
+Event: chose playlist
+
+list playlist videos --> use playlist api to get video info
+
+	list playlist videos [1-x]
+	
+	Chose video --> get video information using id 
+	
+	*** Check video menu *** 
+
+
+
+
+
+Api Calls 
+
+
+-> User Subscriptions (A) 
+
+	use subscription api to grab user subscription ids
+
+		call: .subscriptions().list(part=id,mine=True,maxResults=50)
+
+
+-> Grab Channel Data (B) 
+
+	use channel api to grab channel data
+
+		call .channel().list(part='snippet',id=x) 
+
+
+
+
+
+***** Search Menu *****
+
+print Search menu
+
+set type of search all (a), video (v), channel (c), playlist (p) 
+
+[User types search query] 
+
+print results for [user search query] 
+
+print input number to select item 
+
+print type [m] to load more results
+
+[format] (resource type ) [index number x++] title
+
+
+Search menu multiple rounds of search results
+
+start: grab 25 results
+
+(next is called) --> grab 25 more results 
+
+store old data 
+
+display new data
+
+
+
+# Channel menu loop
+
+##### Function requires Channel Id 
+
+display channel data [title, description, thumbnail] 
+
+also display newest video (possible) 
+
+options -> videso [v], channel_playlist [p]
+
+maybe -> search channel video [s] 
+
+
+Custom Loop Function 
+
+create class for loop function
+
+Data -> youtube_api object, inital data, youtube_api_args
+
+
+
