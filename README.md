@@ -1,2 +1,2 @@
 # Menu for channels user subscribed to
-![](/screenshots/g1.PNG)
+![](/screenshots/g-1.PNG)
