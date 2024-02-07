@@ -1,3 +1,7 @@
+# Project Setup
+To setup this project you need to create project Google Cloud project that uses the YoutubeAPI. Generate API keys and setup an Oauth registration screen. 
+
+
 # Menu for channels user subscribed to
 ![](/screenshots/g-1.PNG)
 
