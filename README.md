@@ -2,4 +2,4 @@
 ![](/screenshots/g-1.PNG)
 
 ## Channel Menu
-![](/screenshots/g-2.PNG)
+![](/screenshots/g2.PNG)
